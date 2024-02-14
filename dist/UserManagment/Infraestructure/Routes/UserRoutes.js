@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const dependencies_1 = require("../dependencies");
+const router = (0, express_1.Router)();
+router.post('/', dependencies_1.registerUserController.run.bind(dependencies_1.registerUserController));
+router.put('/:token/activate', dependencies_1.activateUserController.run.bind(dependencies_1.activateUserController));
+router.post('/auth/login', dependencies_1.loginUserController.run.bind(dependencies_1.loginUserController));
+router.post('/auth/logout', dependencies_1.logoutUserController.run.bind(dependencies_1.logoutUserController));
+exports.default = router;
